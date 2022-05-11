@@ -2,9 +2,12 @@ package com.fc.dao;
 
 import com.fc.entity.TStudent;
 import com.fc.entity.TStudentExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public interface TStudentMapper {
     long countByExample(TStudentExample example);
 
@@ -27,4 +30,8 @@ public interface TStudentMapper {
     int updateByPrimaryKeySelective(TStudent record);
 
     int updateByPrimaryKey(TStudent record);
+
+    List<TStudent> selectAll(TStudent student);
+
+    List<TStudent> selectloginStudent(TStudent student);
 }
