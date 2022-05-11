@@ -27,4 +27,8 @@ public interface TStudentMapper {
     int updateByPrimaryKeySelective(TStudent record);
 
     int updateByPrimaryKey(TStudent record);
+
+    List<TStudent> selectAll(TStudent student);
+
+    List<TStudent> selectloginStudent(TStudent student);
 }

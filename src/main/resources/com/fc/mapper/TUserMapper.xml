@@ -6,6 +6,9 @@
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="pass_word" jdbcType="VARCHAR" property="passWord" />
   </resultMap>
+  <select id="getUser" resultType="com.fc.entity.TUser">
+    select * from t_user;
+</select>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
