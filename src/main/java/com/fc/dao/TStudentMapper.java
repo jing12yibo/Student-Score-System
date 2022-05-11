@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface TStudentMapper {
@@ -34,4 +35,6 @@ public interface TStudentMapper {
     List<TStudent> selectAll(TStudent student);
 
     List<TStudent> selectloginStudent(TStudent student);
+
+    Map<String, Object> selectFinalScore(TStudent temp);
 }

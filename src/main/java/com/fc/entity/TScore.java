@@ -1,6 +1,8 @@
 package com.fc.entity;
 
-public class TScore  {
+import java.io.Serializable;
+
+public class TScore  implements Serializable {
     private Integer scoreId;
     private String scoreTypeName;
     private Integer scoreValue;

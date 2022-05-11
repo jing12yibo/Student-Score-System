@@ -1,7 +1,7 @@
 package com.fc.controller;
 
 
-import com.fc.entity.ResultVo;
+import com.fc.entity.ResultVO;
 import com.fc.entity.TStudent;
 import com.fc.service.StudentService;
 import com.fc.util.Constant;
@@ -25,12 +25,12 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
     @GetMapping("/getAllStudent")
-    public ResultVo<List<TStudent>> getAllStudent(TStudent student,
+    public ResultVO<List<TStudent>> getAllStudent(TStudent student,
                                                   @RequestParam("limit") int limit,
                                                   @RequestParam("page") int page) {
         System.out.println(student);
         PageInfo<TStudent> pageInfo = studentService.getAllStudent(student,page,limit);
-        ResultVo<List<TStudent>> rs = new ResultVo<>();
+        ResultVO<List<TStudent>> rs = new ResultVO<>();
         rs.setCode(Constant.SUCCESS_RETUEN_CODE);
         rs.setMsg("查询成功");
         rs.setData(pageInfo.getList());
@@ -40,11 +40,11 @@ public class StudentController {
     }
 
     @RequestMapping("/addStudent")
-    public ResultVo<Object> addStudent(TStudent student) {
+    public ResultVO<Object> addStudent(TStudent student) {
         Integer studentNo = student.getStudentNo();
         student.setStuPass(studentNo.toString());
         TStudent result = studentService.selectByNo(studentNo);
-        ResultVo<Object> rs = new ResultVo<>();
+        ResultVO<Object> rs = new ResultVO<>();
         if(result == null){
             studentService.addStudent(student);
             rs.setCode(Constant.SUCCESS_RETUEN_CODE);
@@ -57,9 +57,9 @@ public class StudentController {
     }
 
     @RequestMapping("/updateStudent")
-    public ResultVo<Object> updateStudent(TStudent student){
+    public ResultVO<Object> updateStudent(TStudent student){
         Integer total = studentService.updateStudent(student);
-        ResultVo<Object> rs = new ResultVo<>();
+        ResultVO<Object> rs = new ResultVO<>();
         if(total == null || total == 0){
             rs.setCode(Constant.FAILURE_RETUEN_CODE);
             rs.setMsg("修改学生信息失败");
@@ -71,10 +71,10 @@ public class StudentController {
     }
 
     @RequestMapping("/deleteStudent")
-    public ResultVo<Object> deleteStudent(@RequestParam("studentNo") int studentNO){
+    public ResultVO<Object> deleteStudent(@RequestParam("studentNo") int studentNO){
         Integer total = studentService.deleteStudent(studentNO);
 
-        ResultVo<Object> rs = new ResultVo<>();
+        ResultVO<Object> rs = new ResultVO<>();
         if(null==total||0==total) {
             rs.setCode(Constant.FAILURE_RETUEN_CODE);
             rs.setMsg("修改学生信息失败");
@@ -86,8 +86,8 @@ public class StudentController {
     }
 
     @RequestMapping("/studentSelect")
-    public ResultVo<List<TStudent>> studentSelect(){
-        ResultVo<List<TStudent>> rs = new ResultVo<>();
+    public ResultVO<List<TStudent>> studentSelect(){
+        ResultVO<List<TStudent>> rs = new ResultVO<>();
         List<TStudent> list = studentService.selectAllStudent();
         rs.setCode(Constant.SUCCESS_RETUEN_CODE);
         rs.setMsg("查询成功");

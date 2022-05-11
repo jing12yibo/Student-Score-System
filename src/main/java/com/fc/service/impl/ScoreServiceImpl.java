@@ -58,14 +58,14 @@ switch (Integer.parseInt(type)){
 if (flag){
     Integer dso = scoreMapper.insert(score);
     if (dso == null || dso ==0){
-        re.setCode(Integer.valueOf(Constant.HASE_RETUEN_CODE));
+        re.setCode(String.valueOf(Integer.valueOf(Constant.HASE_RETUEN_CODE)));
     re.setMsg("失败");
     }else {
         re.setCount(Long.valueOf(Constant.SUCCESS_RETUEN_CODE));
         re.setMsg("成绩添加成功");
     }
 }else {
-    re.setCode(Integer.valueOf(Constant.HASE_RETUEN_CODE));
+    re.setCode(String.valueOf(Integer.valueOf(Constant.HASE_RETUEN_CODE)));
     re.setMsg(str);
 }
         return re;
