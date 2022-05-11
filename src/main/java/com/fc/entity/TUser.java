@@ -1,5 +1,8 @@
 package com.fc.entity;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class TUser {
     private Integer userId;
 
@@ -23,11 +26,11 @@ public class TUser {
         this.userName = userName == null ? null : userName.trim();
     }
 
-    public String getPassWord() {
-        return passWord;
-    }
 
     public void setPassWord(String passWord) {
         this.passWord = passWord == null ? null : passWord.trim();
+    }
+
+    public String getPassword() {return passWord;
     }
 }
