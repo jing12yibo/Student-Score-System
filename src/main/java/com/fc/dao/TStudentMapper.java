@@ -3,8 +3,12 @@ package com.fc.dao;
 import com.fc.entity.TStudent;
 import com.fc.entity.TStudentExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public interface TStudentMapper {
     long countByExample(TStudentExample example);
 
@@ -27,4 +31,8 @@ public interface TStudentMapper {
     int updateByPrimaryKeySelective(TStudent record);
 
     int updateByPrimaryKey(TStudent record);
+
+    List<TStudent> selectAll(TStudent record);
+
+    Map<String, Object> selectFinalScore(TStudent temp);
 }

@@ -4,7 +4,9 @@ import com.fc.entity.TUser;
 import com.fc.entity.TUserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface TUserMapper {
     long countByExample(TUserExample example);
 

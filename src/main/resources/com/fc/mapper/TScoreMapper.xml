@@ -193,4 +193,11 @@
       student_id = #{studentId,jdbcType=INTEGER}
     where score_id = #{scoreId,jdbcType=INTEGER}
   </update>
+  <select id="countByType" resultType="java.lang.Integer"
+    parameterType = "com.fc.entity.TScore">
+select  count (1)
+from t_score
+where score_type=#{scoreType}
+and student_id=#{studentId}
+  </select>
 </mapper>
