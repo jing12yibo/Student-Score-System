@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.fc.dao")
 @SpringBootApplication
+@MapperScan("com.fc.dao")
 public class StudentScoreSystemApplication {
 
     public static void main(String[] args) {

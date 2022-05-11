@@ -1,8 +1,8 @@
 package com.fc.entity;
 
-public class TScore {
+public class TScore  {
     private Integer scoreId;
-
+    private String scoreTypeName;
     private Integer scoreValue;
 
     private String scoreType;
@@ -39,5 +39,13 @@ public class TScore {
 
     public void setStudentId(Integer studentId) {
         this.studentId = studentId;
+    }
+
+    public void setScoreTypeName(String scoreTypeName) {
+        this.scoreTypeName = scoreTypeName;
+    }
+
+    public String getScoreTypeName() {
+        return scoreTypeName;
     }
 }

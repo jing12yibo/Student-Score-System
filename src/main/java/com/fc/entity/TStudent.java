@@ -1,5 +1,13 @@
 package com.fc.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TStudent {
     private Integer studentNo;
 
@@ -9,6 +17,13 @@ public class TStudent {
 
     private String stuPass;
 
+    private double score1;
+
+    private double score2;
+
+    private double score3;
+
+    private double sumScore;
     public Integer getStudentNo() {
         return studentNo;
     }

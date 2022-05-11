@@ -4,7 +4,9 @@ import com.fc.entity.TScore;
 import com.fc.entity.TScoreExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface TScoreMapper {
     long countByExample(TScoreExample example);
 
@@ -27,4 +29,6 @@ public interface TScoreMapper {
     int updateByPrimaryKeySelective(TScore record);
 
     int updateByPrimaryKey(TScore record);
+//看看有几次
+    int countByType(TScore score);
 }
